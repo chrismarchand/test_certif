@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="cards">
+  <% @movies.each do |movie|%>
+  <div class="card">
+    <h5 class="card-header"><%= movie.title %></h5>
+    <div class="card-body">
+      <h5 class="card-title"><%= movie.year %></h5>
+      <p class="card-text"><%= movie.actors %></p>
+      <a href="#" class="btn btn-primary">See more</a>
+    </div>
+  </div>
+  <% end %>
+  </div>
+</div>
