@@ -27,6 +27,15 @@
                 <% else %>
                   <p class="card-text"><%= movie.actors %></p>
                 <% end %>
+                <div>
+                  <p class="delete-content-btn">
+                  <%= link_to movie_path(movie),
+                    method: :delete, remote: true,
+                    data: { confirm: "Souhaitez-vous supprimer ce film ?" } do %>
+                    <i class="fas fa-trash"></i>
+                  <% end %>
+                  </p>
+                </div>
               </div>
             </div>
           <% end %>
