@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all
+    @movie = Movie.new
   end
 
   def show
@@ -14,12 +15,12 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     if @movie.save
-      redirect_to movie_path
+      redirect_to movie_path(@movie)
     end
   end
 
   def destroy
-    @movie = Movie.find(movie_params)
+    @movie = Movie.find(params[:id])
     @movie.destroy
     redirect_to movies_path
   end
