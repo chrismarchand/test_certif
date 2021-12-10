@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :movies, only: [:create, :index, :destroy]
+  resources :movies, only: [:create, :index, :destroy, :new, :show]
 
   # Rails.application.routes.draw do
   #   get "movies", to: "movies#index"

@@ -1,0 +1,31 @@
+<div class="modal-container">
+  <div class="input-for-emoji emoji-new-movie">
+    <div>
+      <div>
+        <h1 id="New-film">Nouveau film</h1>
+      </div>
+        <%= simple_form_for(movie) do |m| %>
+          <%-# ----------- Location form ----------- -%>
+          <div>
+            <div class="">
+              <%= m.input :title, label: 'Titre', placeholder: 'Titre de mon film' %>
+            </div>
+          </div>
+          <%-# ----------- Date form ----------- -%>
+          <div class="">
+            <%= m.input :year, label: "Année" %>
+          </div>
+          <%-# ----------- Passenger form ----------- -%>
+          <div class="">
+            <%= m.input :actors, label: "Acteurs" %>
+          </div>
+          <div class="">
+            <%= m.button :submit, 'Créer !', class: 'btn btn-danger' %>
+          </div>
+        <% end %>
+          <div>
+            <span class="modal-close" id="modal-close-new"><i class="fas fa-times"></i></span>
+          </div>
+      </div>
+  </div>
+</div>
